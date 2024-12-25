@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guftago/config/routes/route_name.dart';
 import 'package:guftago/views/Onboarding/onBoard.dart';
 import 'package:guftago/views/views.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings setting) {
@@ -27,8 +28,9 @@ class Routes {
           builder: (context) => const SignupScreen(),
         );
       case Route_Name.Home:
-        return MaterialPageRoute(
-          builder: (context) => const Home(),
+        return PageTransition(
+          child: Home(),
+          type: PageTransitionType.fade,
         );
       case Route_Name.FirstScreen:
         return MaterialPageRoute(

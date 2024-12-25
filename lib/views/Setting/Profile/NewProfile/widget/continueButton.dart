@@ -41,7 +41,7 @@ class _ContinueButtonState extends State<ContinueButton> {
                 width: state == ButtonState.loading ? 50 : width,
                 height: 40,
                 child: state == ButtonState.loading
-                    ? SmallLoading(true)
+                    ? smallLoading(true)
                     : Button(),
               ),
             ));
@@ -49,7 +49,7 @@ class _ContinueButtonState extends State<ContinueButton> {
     );
   }
 
-  Widget SmallLoading(bool isDone) {
+  Widget smallLoading(bool isDone) {
     return Container(
       decoration: const BoxDecoration(
         shape: BoxShape.circle,

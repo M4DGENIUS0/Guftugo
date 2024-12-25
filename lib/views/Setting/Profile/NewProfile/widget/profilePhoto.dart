@@ -70,9 +70,9 @@ class _ProfilephotoState extends State<Profilephoto> {
                       child: CircleAvatar(
                         radius: 70,
                         child: state.file == null
-                            ? Image.asset(
-                                assets.placeholder,
-                                height: 130,
+                            ? Image.network(
+                                assets.placeholder2,
+                                height: 100,
                               )
                             : Image.file(File(state.file!.path)),
                       ),

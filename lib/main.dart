@@ -96,8 +96,8 @@ class MyApp extends StatelessWidget {
             home: BlocBuilder<AuthStateBloc, AuthStateState>(
               builder: (context, state) {
                 if (state.authstate == AuthStateStatus.Authenticate) {
-                  return const CreateNewProfile();
-                  // return const Home();
+                  // return const CreateNewProfile();
+                  return const Home();
                   // return const CreateNewProfile();
                 } else if (state.authstate != AuthStateStatus.unAuthenticate) {
                   return const SplashScreen();
