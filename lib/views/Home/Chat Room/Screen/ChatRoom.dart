@@ -6,6 +6,7 @@ import 'package:guftago/views/views.dart';
 import '../../../../Domain/model/model.dart';
 import '../../../../bloc/MessageScreen/message_screen_bloc.dart';
 import '../../../../bloc/RealTimeChatUserList/real_time_chat_user_list_bloc.dart';
+import '../../../../bloc/messageblocSocketIO/messagebloc_socket_io_bloc.dart';
 import '../../../../config/components/toast.dart';
 
 class Chatroom extends StatefulWidget {
@@ -24,6 +25,13 @@ class Chatroom extends StatefulWidget {
 }
 
 class _ChatroomState extends State<Chatroom> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<MessageblocSocketIoBloc>().add(ConnectToSocketEvent(
+        sourceId: widget.chatViewModel.currentUser.id.toString()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,86 +92,44 @@ class _ChatroomState extends State<Chatroom> {
           )
         ],
       ),
-      body: BlocProvider(
-        create: (context) => MessageScreenBloc(widget.chatViewModel.chatservice)
-          ..add(GetMessages(widget.chatViewModel.ChatRoomID)),
-        child: Column(
-          children: [
-            BlocBuilder<MessageScreenBloc, MessageScreenState>(
+      body: Column(
+        children: [
+          Expanded(
+            child:
+                BlocBuilder<MessageblocSocketIoBloc, MessageblocSocketIoState>(
               builder: (context, state) {
-                if (state is MessagesLoading) {
-                  return const Expanded(
-                      child: Center(child: CircularProgressIndicator()));
-                } else if (state is MessagesLoaded) {
-                  return Expanded(
-                    child: ListView.builder(
-                      padding: const EdgeInsets.all(20),
-                      itemCount: state.messages.length,
-                      itemBuilder: (context, index) {
-                        // print(state.messages.length);
-                        final message = state.messages[index];
-                        print(message);
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Chatbubble(
-                            isCurrent: false,
-                            content: message.content ?? "",
-                            time: message.timestamp ?? "",
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                } else if (state is MessagesError) {
-                  return Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.error,
-                            color: colors.black,
-                            size: 30,
-                          ),
-                          Text(state.error,
-                              style: const TextStyle(
-                                  color: colors.black, fontFamily: 'Regular'))
-                        ],
-                      ),
-                    ),
-                  );
-                } else if (state is MessageScreenInitial) {
-                  return const Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.chat_bubble_outline_rounded,
-                            color: colors.black,
-                            size: 30,
-                          ),
-                          Text("Start Messaging",
-                              style: TextStyle(
-                                  color: colors.black, fontFamily: 'Regular'))
-                        ],
-                      ),
-                    ),
+                if (state is ChatConnecting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (state is ChatMessageReceived) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    itemCount: state.messages.length,
+                    itemBuilder: (context, index) {
+                      final message = state.messages[index];
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Chatbubble(
+                          content: message.message,
+                          time: DateTime.parse(message.time),
+                          isCurrent: message.type == "source",
+                        ),
+                      );
+                    },
                   );
                 } else {
-                  return const Expanded(
-                      child: Center(child: Text("Nothing to show")));
+                  return const Center(child: Text("Connecting..."));
                 }
               },
             ),
-            BottomMessageField(
-              controller: widget.chatViewModel.controller,
-              ChatroomId: widget.chatViewModel.ChatRoomID,
-              sender: widget.chatViewModel.currentUser,
-              reciever: widget.chatViewModel.reciever,
-            )
-          ],
-        ),
+          ),
+          BottomMessageField(
+            controller: widget.chatViewModel.controller,
+            ChatroomId: widget.chatViewModel.ChatRoomID,
+            sender: widget.chatViewModel.currentUser,
+            reciever: widget.chatViewModel.reciever,
+          ),
+        ],
       ),
     );
   }

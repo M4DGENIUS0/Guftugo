@@ -14,7 +14,7 @@ class Chatbubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final alignment = isCurrent ? Alignment.centerLeft : Alignment.centerRight;
+    final alignment = isCurrent ? Alignment.centerRight : Alignment.centerLeft;
     const radius = Radius.circular(15);
     // DateTime now = DateTime.now();
     String formattedTime = DateFormat('h:mm a').format(time);
@@ -28,15 +28,15 @@ class Chatbubble extends StatelessWidget {
             color: isCurrent ? colors.green : Colors.grey[200],
             borderRadius: isCurrent
                 ? const BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    topLeft: radius,
-                    topRight: radius,
-                    bottomRight: radius)
-                : const BorderRadius.only(
                     bottomLeft: radius,
                     topLeft: radius,
                     topRight: radius,
-                    bottomRight: Radius.circular(0))),
+                    bottomRight: Radius.circular(0))
+                : const BorderRadius.only(
+                    bottomLeft: Radius.circular(0),
+                    topLeft: radius,
+                    topRight: radius,
+                    bottomRight: radius)),
         child: Column(
           crossAxisAlignment:
               isCurrent ? CrossAxisAlignment.start : CrossAxisAlignment.end,

@@ -5,6 +5,7 @@ import 'package:guftago/config/Colors/colors.dart';
 import '../../../../Domain/model/Messages/messages.dart';
 import '../../../../Domain/model/model.dart';
 import '../../../../bloc/MessageScreen/message_screen_bloc.dart';
+import '../../../../bloc/messageblocSocketIO/messagebloc_socket_io_bloc.dart';
 
 class BottomMessageField extends StatelessWidget {
   final String ChatroomId;
@@ -63,14 +64,14 @@ class BottomMessageField extends StatelessWidget {
                   // Send Message Button Here
                   suffixIcon: IconButton(
                       onPressed: () {
-                        final messageContent = controller.text;
+                        final messageContent = controller.text.trim();
                         if (messageContent.isNotEmpty) {
-                          context.read<MessageScreenBloc>().add(SendMessage(
-                                chatRoomID: ChatroomId,
-                                content: messageContent,
-                                sender: sender,
-                                receiver: reciever,
-                                time: DateTime.now(),
+                          context
+                              .read<MessageblocSocketIoBloc>()
+                              .add(SendMessageEvent(
+                                message: messageContent,
+                                sourceId: sender.id.toString(),
+                                targetId: reciever.id.toString(),
                               ));
                           controller.clear();
                         }

@@ -18,6 +18,7 @@ import 'bloc/RealTimeChatUserList/real_time_chat_user_list_bloc.dart';
 import 'bloc/SignUp/signup_bloc.dart';
 import 'bloc/SupabaseProfileImage/supabase_profile_image_bloc.dart';
 import 'bloc/UserInfoBloc/user_bloc.dart';
+import 'bloc/messageblocSocketIO/messagebloc_socket_io_bloc.dart';
 import 'data/network/Chat Repo/UserList/Firebase/UserListAbstractRepo.dart';
 import 'data/network/Chat Repo/UserList/Supabase/UserListProfileRepo.dart';
 import 'data/network/User Repo/Supabase/UserPofileRepoSupabase.dart';
@@ -85,7 +86,9 @@ class MyApp extends StatelessWidget {
                     UserProfileListRepo(
                       supabaseClient: Supabase.instance.client,
                     ))
-                  ..add(FetchUsersList(FirebaseAuth.instance.currentUser!.uid)))
+                  ..add(
+                      FetchUsersList(FirebaseAuth.instance.currentUser!.uid))),
+            BlocProvider(create: (_) => MessageblocSocketIoBloc())
           ],
           child: MaterialApp(
             builder: FToastBuilder(),
