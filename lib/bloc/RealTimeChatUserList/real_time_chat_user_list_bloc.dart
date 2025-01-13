@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../Domain/model/model.dart';
+import '../../Domain/model/User model/model.dart';
 import '../../data/network/Chat Repo/UserList/Firebase/UserListAbstractRepo.dart';
 import '../../data/network/Chat Repo/UserList/Supabase/UserListProfileRepo.dart';
 

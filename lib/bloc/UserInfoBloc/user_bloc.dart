@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:guftago/utils/status/status.dart';
 
-import '../../Domain/model/model.dart';
+import '../../Domain/model/User model/model.dart';
 import '../../data/network/User Repo/firebase/userServiceRepo.dart';
 
 part 'user_event.dart';
