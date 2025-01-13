@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../Domain/model/model.dart';
+import '../../../../Domain/model/User model/model.dart';
 
 abstract class UserRepository {
   // Check Asynwise if the user is login or not

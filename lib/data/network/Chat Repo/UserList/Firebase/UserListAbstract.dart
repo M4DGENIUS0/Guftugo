@@ -1,4 +1,4 @@
-import '../../../../../Domain/model/model.dart';
+import '../../../../../Domain/model/User model/model.dart';
 
 abstract class UserListAbstract {
   // Fetch User Crediential in Real-time

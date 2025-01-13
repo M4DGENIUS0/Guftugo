@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:guftago/Domain/entities/entities.dart';
 
-import '../../../../../Domain/model/model.dart';
+import '../../../../../Domain/model/User model/model.dart';
 import 'UserListAbstract.dart';
 
 class UserListRepo implements UserListAbstract {

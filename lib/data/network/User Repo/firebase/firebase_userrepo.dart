@@ -3,7 +3,7 @@ import 'package:cross_file/src/types/interface.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../Domain/entities/entities.dart';
-import '../../../../Domain/model/model.dart';
+import '../../../../Domain/model/User model/model.dart';
 import '../../../../config/routes/route_name.dart';
 import 'userServiceRepo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
