@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../Domain/model/model.dart';
+import '../../Domain/model/User model/model.dart';
 import '../../data/network/User Repo/firebase/userServiceRepo.dart';
 
 part 'signup_event.dart';

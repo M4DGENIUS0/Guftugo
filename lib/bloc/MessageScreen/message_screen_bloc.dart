@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../Domain/model/Messages/messages.dart';
+import '../../Domain/model/User model/model.dart';
 import '../../service/Chat Service/ChatroomService.dart';
 
 part 'message_screen_event.dart';
