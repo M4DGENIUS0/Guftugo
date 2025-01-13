@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guftago/bloc/SignUp/signup_bloc.dart';
 import 'package:guftago/config/Colors/colors.dart';
 
-import '../../../../Domain/model/model.dart';
+import '../../../../Domain/model/User model/model.dart';
 import '../../../../config/components/toast.dart';
 import '../../../../config/routes/route_name.dart';
 
@@ -41,7 +41,7 @@ class SignUpButton extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: colors.green,
+                    backgroundColor: colors.Primary,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: const BorderSide(

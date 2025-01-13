@@ -105,10 +105,10 @@ flutter:
   #         style: italic
     - family: Regular
       fonts:
-        - asset: assets/font/FixelAll/FixelDisplay/FixelDisplay-ExtraLight.otf
+        - asset: assets/font/FixelAll/FixelText/FixelText-Regular.otf
     - family: Light
       fonts:
-        - asset: assets/font/Dubai.ttf
+        - asset: assets/font/FixelAll/FixelDisplay/FixelDisplay-ExtraLight.otf
     - family: Urdu2
       fonts:
         - asset: assets/font/Gandhara Suls Regular/Gandhara Suls Regular.ttf

@@ -44,7 +44,7 @@ class ContentWidget extends StatelessWidget {
                       foreground: Paint()
                         ..style = PaintingStyle.stroke
                         ..strokeWidth = 1
-                        ..color = colors.green,
+                        ..color = colors.Primary,
                       fontFamily: "Large",
                       fontSize: 30,
                       // color: colors.green,

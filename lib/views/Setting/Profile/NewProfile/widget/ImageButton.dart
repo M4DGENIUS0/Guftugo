@@ -15,7 +15,7 @@ class Buttons_Image extends StatelessWidget {
           height: 50,
           width: 50,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100), color: colors.green),
+              borderRadius: BorderRadius.circular(100), color: colors.Primary),
           child: Icon(
             icon,
             color: colors.black,

@@ -27,8 +27,9 @@ class _ContinueButtonState extends State<ContinueButton> {
             child: Container(
               // width: 200,
               decoration: BoxDecoration(
-                color:
-                    state == ButtonState.loading ? Colors.green : colors.green,
+                color: state == ButtonState.loading
+                    ? Colors.green
+                    : colors.Primary,
                 border:
                     Border.all(strokeAlign: 1, color: colors.black, width: 2),
                 borderRadius: state == ButtonState.loading

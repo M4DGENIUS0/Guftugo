@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guftago/config/Colors/colors.dart';
 import 'package:guftago/views/views.dart';
 
-import '../../../../Domain/model/model.dart';
+import '../../../../Domain/model/Chat View Model/chatviewmodel.dart';
 import '../../../../bloc/MessageScreen/message_screen_bloc.dart';
 import '../../../../bloc/RealTimeChatUserList/real_time_chat_user_list_bloc.dart';
 import '../../../../bloc/messageblocSocketIO/messagebloc_socket_io_bloc.dart';

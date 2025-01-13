@@ -1,8 +1,10 @@
 class assets {
+  static const bg1 = "assets/Onboarding/Background1.png";
   // Introduction Screen Assets
   static const Chatting = "assets/Onboarding/chatting.svg";
   static const loved_ones = "assets/Onboarding/loved_ones.svg";
   static const encryption = "assets/Onboarding/encryption.svg";
+  static const avatar = "assets/Onboarding/Avatar.png";
   // *************************************
 
   // Authentication Pages Assets

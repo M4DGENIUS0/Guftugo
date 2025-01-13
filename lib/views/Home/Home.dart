@@ -9,6 +9,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:guftago/config/Colors/colors.dart';
 import 'package:guftago/config/routes/route_name.dart';
 import 'package:guftago/views/views.dart';
 
@@ -50,6 +51,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         },
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: colors.Primary,
             title: const Text("Guftago",
                 style: TextStyle(
                     fontFamily: "Large",
@@ -58,24 +60,41 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             centerTitle: true,
           ),
           drawer: const CustomDrawer(),
-          body: const Column(
-            // spacing: 5,
-            children: [
-              Gap(30),
-              SearchEngine(),
-              Gap(10),
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 30.0),
-                    child: Text("Chatting",
-                        style: TextStyle(
-                          fontFamily: "Regular",
-                          fontSize: 21,
-                        )),
-                  )),
-              Expanded(child: Chatlist()),
-            ],
+          body: Container(
+            color: colors.Primary,
+            child: Column(
+              // spacing: 5,
+              children: [
+                Gap(30),
+                SearchEngine(),
+                Gap(10),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(25),
+                            topRight: Radius.circular(25))),
+                    child: Column(
+                      children: [
+                        Gap(10),
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 30.0),
+                              child: Text("Chatting",
+                                  style: TextStyle(
+                                    fontFamily: "Regular",
+                                    fontSize: 21,
+                                  )),
+                            )),
+                        Chatlist(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ));
   }

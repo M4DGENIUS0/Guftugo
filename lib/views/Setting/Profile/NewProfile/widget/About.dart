@@ -32,8 +32,8 @@ class About extends StatelessWidget {
                   labelStyle: const TextStyle(
                       fontFamily: "Regular", color: colors.black),
                   focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: colors.green, strokeAlign: 5),
+                      borderSide: const BorderSide(
+                          color: colors.Primary, strokeAlign: 5),
                       borderRadius: BorderRadius.circular(15)),
                   border: OutlineInputBorder(
                       borderSide: const BorderSide(color: colors.black),

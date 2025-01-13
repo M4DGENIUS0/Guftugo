@@ -66,7 +66,7 @@ class _onBoardScreenState extends State<onBoardScreen> {
                         controller: _controller,
                         count: 3,
                         effect: ExpandingDotsEffect(
-                            activeDotColor: colors.green,
+                            activeDotColor: colors.Primary,
                             dotColor: Colors.grey.shade300,
                             dotHeight: 10.0,
                             dotWidth: 10.0),
@@ -74,7 +74,7 @@ class _onBoardScreenState extends State<onBoardScreen> {
                       state.isChange
                           ? OnboardButton(
                               title: 'Confirm',
-                              color: colors.green,
+                              color: colors.Primary,
                               tap: () {
                                 Navigator.pushNamedAndRemoveUntil(
                                   context,
@@ -85,7 +85,7 @@ class _onBoardScreenState extends State<onBoardScreen> {
                             )
                           : OnboardButton(
                               title: 'Next',
-                              color: colors.green,
+                              color: colors.Primary,
                               tap: () {
                                 _controller.nextPage(
                                     duration: const Duration(milliseconds: 500),

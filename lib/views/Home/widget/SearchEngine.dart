@@ -10,12 +10,14 @@ class SearchEngine extends StatelessWidget {
       width: 300,
       child: TextField(
         decoration: InputDecoration(
+            fillColor: colors.white,
+            filled: true,
             hintText: "Search by Name",
             suffixIcon: Padding(
               padding: const EdgeInsets.only(right: 10, top: 5, bottom: 5),
               child: Container(
                 decoration: BoxDecoration(
-                    color: colors.green,
+                    color: colors.Primary,
                     borderRadius: BorderRadius.circular(6)),
                 child: const Icon(
                   Icons.search_rounded,

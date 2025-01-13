@@ -13,7 +13,7 @@ class Routes {
         );
       case Route_Name.onBoard:
         return MaterialPageRoute(
-          builder: (context) => const onBoardScreen(),
+          builder: (context) => const Onboard(),
         );
       case Route_Name.AuthScreen:
         return MaterialPageRoute(

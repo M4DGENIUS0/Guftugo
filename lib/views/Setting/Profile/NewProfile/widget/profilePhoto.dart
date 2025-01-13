@@ -83,7 +83,7 @@ class _ProfilephotoState extends State<Profilephoto> {
                     bottom: 0,
                     child: CircleAvatar(
                       radius: 25,
-                      backgroundColor: colors.green,
+                      backgroundColor: colors.Primary,
                       child: Icon(
                         Icons.camera_alt_outlined,
                         color: colors.black,

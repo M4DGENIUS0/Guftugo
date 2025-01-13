@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guftago/config/Colors/colors.dart';
 
 import '../../../../Domain/model/Messages/messages.dart';
-import '../../../../Domain/model/model.dart';
+import '../../../../Domain/model/User model/model.dart';
 import '../../../../bloc/MessageScreen/message_screen_bloc.dart';
 import '../../../../bloc/messageblocSocketIO/messagebloc_socket_io_bloc.dart';
 
@@ -78,7 +78,7 @@ class BottomMessageField extends StatelessWidget {
                       },
                       icon: const CircleAvatar(
                         radius: 20,
-                        backgroundColor: colors.green,
+                        backgroundColor: colors.Primary,
                         child: Icon(
                           Icons.send_rounded,
                           color: colors.black,

@@ -101,11 +101,12 @@ class MyApp extends StatelessWidget {
                 if (state.authstate == AuthStateStatus.Authenticate) {
                   // return const CreateNewProfile();
                   return const Home();
+                  // return Onboard();
                   // return const CreateNewProfile();
                 } else if (state.authstate != AuthStateStatus.unAuthenticate) {
                   return const SplashScreen();
                 } else {
-                  return const AuthScreen();
+                  return const Onboard();
                 }
               },
             ),

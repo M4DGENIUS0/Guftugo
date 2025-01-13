@@ -34,10 +34,10 @@ class OPTField extends StatelessWidget {
           fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: colors.green)),
+              borderSide: const BorderSide(color: colors.Primary)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: colors.green)),
+              borderSide: const BorderSide(color: colors.Primary)),
         ),
       ),
     );

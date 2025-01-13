@@ -12,7 +12,7 @@ class ConfirmOPT extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: colors.green,
+              backgroundColor: colors.Primary,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                   side: const BorderSide(color: Colors.black, strokeAlign: 2))),

@@ -32,7 +32,7 @@ class AuthScreen extends StatelessWidget {
           const Gap(100),
           ButtonWidget(
             title: 'Login',
-            color: colors.green,
+            color: colors.Primary,
             tap: () {
               Navigator.pushNamed(
                 context,
