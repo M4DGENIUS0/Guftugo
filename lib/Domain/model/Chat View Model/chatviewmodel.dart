@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:guftago/Domain/model/model.dart';
 
 import '../../../service/Chat Service/ChatroomService.dart';
 import '../Messages/messages.dart';
+import '../User model/model.dart';
 
 class ChatViewModel {
   final ChatRoomService chatservice;
